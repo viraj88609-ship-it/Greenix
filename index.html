@@ -24,17 +24,16 @@
       line-height: 1.6;
     }
 
-    /* HEADER */
     header {
       background: #111827;
       padding: 18px 8%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
-      color: white;
+      color: #ffffff;
       font-size: 27px;
       font-weight: bold;
     }
@@ -46,78 +45,68 @@
     nav a {
       color: #d1d5db;
       text-decoration: none;
-      margin-left: 25px;
+      margin-left: 22px;
     }
 
     nav a:hover {
       color: #22c55e;
     }
 
-    /* HERO */
     .hero {
-      min-height: 550px;
       background: linear-gradient(135deg, #111827, #1f2937);
       color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       text-align: center;
-      padding: 80px 8%;
-    }
-
-    .hero-content {
-      max-width: 800px;
+      padding: 100px 8%;
     }
 
     .hero h1 {
-      font-size: 50px;
+      font-size: 48px;
+      max-width: 800px;
+      margin: auto;
       line-height: 1.2;
-      margin-bottom: 20px;
     }
 
     .hero p {
+      max-width: 650px;
+      margin: 22px auto;
       color: #d1d5db;
       font-size: 18px;
-      max-width: 650px;
-      margin: auto;
     }
 
-    /* BUTTON */
     .btn {
       display: inline-block;
-      margin-top: 30px;
-      padding: 15px 32px;
+      margin-top: 20px;
+      padding: 14px 28px;
       background: #22c55e;
       color: #052e16;
-      text-decoration: none;
+      border: none;
       border-radius: 8px;
+      text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
+      cursor: pointer;
+      font-size: 15px;
     }
 
     .btn:hover {
       background: #4ade80;
-      transform: translateY(-2px);
     }
 
-    /* SECTIONS */
     .section {
       padding: 80px 8%;
       text-align: center;
     }
 
     .section h2 {
-      font-size: 35px;
+      font-size: 34px;
       margin-bottom: 15px;
     }
 
     .section-text {
       max-width: 680px;
-      margin: 0 auto 45px;
+      margin: 0 auto 40px;
       color: #6b7280;
     }
 
-    /* CARDS */
     .cards {
       display: flex;
       justify-content: center;
@@ -127,14 +116,14 @@
 
     .card {
       background: white;
-      width: 300px;
-      padding: 35px 25px;
+      width: 310px;
+      padding: 30px 25px;
       border-radius: 14px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     }
 
-    .icon {
-      font-size: 40px;
+    .card-icon {
+      font-size: 38px;
       margin-bottom: 15px;
     }
 
@@ -148,63 +137,58 @@
       font-size: 15px;
     }
 
-    /* WELLNESS */
-    .wellness {
-      background: white;
+    /* Hidden detail section */
+    .details {
+      display: none;
+      background: #ffffff;
+      padding: 70px 8%;
     }
 
-    .wellness-box {
-      max-width: 850px;
+    .details.active {
+      display: block;
+    }
+
+    .details-box {
+      max-width: 900px;
       margin: auto;
-      padding: 35px;
       background: #f0fdf4;
+      padding: 35px;
       border-radius: 15px;
+      border: 1px solid #bbf7d0;
     }
 
-    .wellness-box h3 {
+    .details-box h2 {
       color: #166534;
+      margin-bottom: 15px;
+    }
+
+    .details-box h3 {
+      margin-top: 25px;
+      margin-bottom: 8px;
+      color: #14532d;
+    }
+
+    .details-box p {
+      color: #4b5563;
       margin-bottom: 12px;
     }
 
-    .wellness-box p {
+    .details-box ul {
+      margin: 10px 0 20px 20px;
       color: #4b5563;
     }
 
-    /* CTA */
-    .cta {
-      background: #16a34a;
-      color: white;
+    .details-box li {
+      margin-bottom: 8px;
     }
 
-    .cta h2 {
-      color: white;
-    }
-
-    .cta p {
-      max-width: 600px;
-      margin: 15px auto;
-      color: #dcfce7;
-    }
-
-    .cta .btn {
-      background: white;
-      color: #166534;
-    }
-
-    .cta .btn:hover {
-      background: #f0fdf4;
-    }
-
-    /* FOOTER */
     footer {
       background: #111827;
       color: #9ca3af;
       text-align: center;
-      padding: 30px;
-      font-size: 14px;
+      padding: 28px;
     }
 
-    /* MOBILE */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -215,17 +199,8 @@
         margin: 0 8px;
       }
 
-      .hero {
-        min-height: 480px;
-        padding: 60px 6%;
-      }
-
       .hero h1 {
         font-size: 36px;
-      }
-
-      .hero p {
-        font-size: 16px;
       }
 
       .section {
@@ -234,7 +209,7 @@
 
       .card {
         width: 100%;
-        max-width: 360px;
+        max-width: 370px;
       }
     }
   </style>
@@ -242,100 +217,97 @@
 
 <body>
 
-  <!-- HEADER -->
   <header>
-
-    <div class="logo">
-      Fit<span>Life</span>
-    </div>
+    <div class="logo">Fit<span>Life</span></div>
 
     <nav>
       <a href="#fitness">Fitness</a>
-      <a href="#wellness">Wellness</a>
+      <a href="#health">Health</a>
       <a href="#contact">Contact</a>
     </nav>
-
   </header>
 
 
-  <!-- HERO -->
   <section class="hero">
+    <h1>Stay Active. Build Healthy Everyday Habits.</h1>
 
-    <div class="hero-content">
+    <p>
+      Explore simple fitness, movement and wellness information
+      designed around an active and balanced lifestyle.
+    </p>
 
-      <h1>
-        Stay Active. Build Healthy Habits.
-      </h1>
-
-      <p>
-        Discover fitness, movement and everyday wellness ideas
-        designed to support an active and balanced lifestyle.
-      </p>
-
-      <!-- REDIRECT BUTTON -->
-      <a
-        href="https://YOUR-REDIRECT-URL.com"
-        class="btn"
-      >
-        Explore Now
-      </a>
-
-    </div>
-
+    <a href="#fitness" class="btn">Explore More</a>
   </section>
 
 
-  <!-- FITNESS -->
   <section class="section" id="fitness">
 
-    <h2>Fitness & Wellness</h2>
+    <h2>Fitness & Health</h2>
 
     <p class="section-text">
-      Explore simple activities and everyday habits that can
-      support an active lifestyle.
+      Choose a topic below and click Learn More to view detailed
+      information on the same page.
     </p>
 
     <div class="cards">
 
+      <!-- Gym Training -->
       <div class="card">
-
-        <div class="icon">🏋️</div>
+        <div class="card-icon">🏋️</div>
 
         <h3>Gym Training</h3>
 
         <p>
-          Discover strength and fitness activities in a positive
-          and comfortable environment.
+          Learn more about structured strength training,
+          movement and gym routines.
         </p>
 
+        <button
+          class="btn"
+          onclick="showDetails('gymDetails')"
+        >
+          Learn More
+        </button>
       </div>
 
 
+      <!-- Active Lifestyle -->
       <div class="card">
-
-        <div class="icon">🏃</div>
+        <div class="card-icon">🏃</div>
 
         <h3>Active Lifestyle</h3>
 
         <p>
-          Explore enjoyable ways to add regular movement
-          and physical activity to your routine.
+          Explore practical ideas for adding more movement
+          into everyday life.
         </p>
 
+        <button
+          class="btn"
+          onclick="showDetails('activeDetails')"
+        >
+          Learn More
+        </button>
       </div>
 
 
+      <!-- Healthy Habits -->
       <div class="card">
-
-        <div class="icon">🥗</div>
+        <div class="card-icon">🥗</div>
 
         <h3>Healthy Habits</h3>
 
         <p>
-          Learn about balanced everyday habits that can support
-          general health and wellbeing.
+          Read more about balanced routines,
+          rest, hydration and general wellness.
         </p>
 
+        <button
+          class="btn"
+          onclick="showDetails('healthDetails')"
+        >
+          Learn More
+        </button>
       </div>
 
     </div>
@@ -343,60 +315,181 @@
   </section>
 
 
-  <!-- WELLNESS -->
-  <section class="section wellness" id="wellness">
+  <!-- Gym Details -->
+  <section class="details" id="gymDetails">
 
-    <h2>Simple Everyday Wellness</h2>
+    <div class="details-box">
 
-    <p class="section-text">
-      Create a routine based around movement, rest and
-      balanced everyday choices.
-    </p>
-
-    <div class="wellness-box">
-
-      <h3>Make Movement Part of Your Day</h3>
+      <h2>Gym Training – More Details</h2>
 
       <p>
-        Explore activities that work with your interests and routine.
-        Fitness can be about enjoying movement and maintaining
-        consistent everyday habits.
+        Gym training can include a variety of strength,
+        mobility and general fitness activities.
+        The right routine can depend on experience,
+        preferences and individual goals.
       </p>
+
+      <h3>Strength Training</h3>
+
+      <p>
+        Strength-focused exercises generally involve controlled
+        movements that challenge different muscle groups.
+      </p>
+
+      <ul>
+        <li>Full-body training activities</li>
+        <li>Upper and lower body exercises</li>
+        <li>Mobility and flexibility work</li>
+        <li>Rest and recovery between sessions</li>
+      </ul>
+
+      <h3>Training Environment</h3>
+
+      <p>
+        A comfortable and organized training space can make
+        exercise easier to include in a regular routine.
+      </p>
+
+      <button class="btn" onclick="hideDetails('gymDetails')">
+        Close Details
+      </button>
 
     </div>
 
   </section>
 
 
-  <!-- CTA -->
-  <section class="section cta" id="contact">
+  <!-- Active Lifestyle Details -->
+  <section class="details" id="activeDetails">
 
-    <h2>Explore Fitness & Wellness</h2>
+    <div class="details-box">
 
-    <p>
-      Discover more information about fitness activities
-      and everyday wellness.
-    </p>
+      <h2>Active Lifestyle – More Details</h2>
 
-    <!-- SECOND REDIRECT BUTTON -->
-    <a
-      href="https://YOUR-REDIRECT-URL.com"
-      class="btn"
-    >
-      Learn More
-    </a>
+      <p>
+        An active lifestyle can involve many different types of
+        movement and does not have to be limited to gym sessions.
+      </p>
+
+      <h3>Everyday Movement</h3>
+
+      <ul>
+        <li>Walking</li>
+        <li>Recreational sports</li>
+        <li>Mobility activities</li>
+        <li>Light exercise sessions</li>
+      </ul>
+
+      <h3>Build a Consistent Routine</h3>
+
+      <p>
+        Choosing activities that fit your schedule and interests
+        can make regular movement easier to maintain.
+      </p>
+
+      <button class="btn" onclick="hideDetails('activeDetails')">
+        Close Details
+      </button>
+
+    </div>
 
   </section>
 
 
-  <!-- FOOTER -->
-  <footer>
+  <!-- Health Details -->
+  <section class="details" id="healthDetails">
 
-    <p>
-      © 2026 FitLife. All Rights Reserved.
+    <div class="details-box">
+
+      <h2>Healthy Habits – More Details</h2>
+
+      <p>
+        General wellness involves more than exercise.
+        Everyday routines can include movement, rest,
+        hydration and balanced food choices.
+      </p>
+
+      <h3>Balanced Routine</h3>
+
+      <ul>
+        <li>Regular physical activity</li>
+        <li>A varied and balanced diet</li>
+        <li>Regular hydration</li>
+        <li>A consistent sleep routine</li>
+        <li>Time for rest and recovery</li>
+      </ul>
+
+      <h3>Keep It Practical</h3>
+
+      <p>
+        Wellness habits can be easier to maintain when they are
+        realistic and fit naturally into everyday life.
+      </p>
+
+      <button class="btn" onclick="hideDetails('healthDetails')">
+        Close Details
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <section class="section" id="contact">
+
+    <h2>Explore Fitness & Wellness</h2>
+
+    <p class="section-text">
+      Discover useful information about movement,
+      fitness and general wellbeing.
     </p>
 
+  </section>
+
+
+  <footer>
+    © 2026 FitLife. All Rights Reserved.
   </footer>
+
+
+  <script>
+
+    function showDetails(sectionId) {
+
+      // Hide all detail sections first
+      const allDetails = document.querySelectorAll('.details');
+
+      allDetails.forEach(function(section) {
+        section.classList.remove('active');
+      });
+
+
+      // Show selected detail section
+      const selectedSection = document.getElementById(sectionId);
+
+      selectedSection.classList.add('active');
+
+
+      // Scroll to selected section
+      selectedSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+
+
+    function hideDetails(sectionId) {
+
+      const section = document.getElementById(sectionId);
+
+      section.classList.remove('active');
+
+      document.getElementById('fitness').scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+
+  </script>
 
 </body>
 </html>
