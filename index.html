@@ -4,152 +4,212 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Destination Preview</title>
+  <title>FitLife | Gym & Health</title>
 
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      margin: 0;
-      min-height: 100vh;
-      background: #f5f6df;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: #111827;
+      padding: 18px 8%;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      color: #344054;
     }
 
-    .card {
-      width: 480px;
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    }
-
-    .preview-text {
-      font-size: 18px;
-      color: #667085;
-      margin-bottom: 18px;
-    }
-
-    .destination {
-      display: inline-block;
-      font-size: 24px;
-      font-weight: 500;
-      color: #0067d9;
-      text-decoration: underline;
-      margin-bottom: 18px;
-    }
-
-    .description {
-      font-size: 14px;
-      line-height: 1.55;
-      color: #667085;
-      margin: 0 0 24px;
-    }
-
-    .security-box {
-      background: #f7f8fa;
-      border-radius: 14px;
-      padding: 22px 20px;
-      margin-bottom: 24px;
-    }
-
-    .security-title {
-      font-size: 16px;
-      font-weight: 700;
-      color: #1d2939;
-      margin-bottom: 18px;
-    }
-
-    .security-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 13px 0;
-      font-size: 14px;
-      color: #475467;
-    }
-
-    .icon {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .shield {
-      border: 2px solid #0070e0;
-      border-radius: 6px 6px 9px 9px;
-      width: 15px;
-      height: 18px;
-    }
-
-    .eye {
-      width: 19px;
-      height: 12px;
-      border: 2px solid #0070e0;
-      border-radius: 50%;
-      position: relative;
-    }
-
-    .eye::after {
-      content: "";
-      width: 4px;
-      height: 4px;
-      background: #0070e0;
-      border-radius: 50%;
-      position: absolute;
-      left: 5px;
-      top: 2px;
-    }
-
-    .check {
-      color: #16a34a;
-      font-size: 21px;
+    .logo {
+      color: #ffffff;
+      font-size: 26px;
       font-weight: bold;
     }
 
-    .continue-btn {
-      width: 100%;
-      height: 48px;
-      border: none;
-      border-radius: 8px;
-      background: #06447f;
+    .logo span {
+      color: #22c55e;
+    }
+
+    nav a {
+      color: #d1d5db;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #22c55e;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #111827, #1f2937);
       color: #ffffff;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .continue-btn:hover {
-      background: #053765;
-    }
-
-    .arrow {
-      font-size: 22px;
-      margin-left: 8px;
-      vertical-align: -1px;
-    }
-
-    .redirect {
       text-align: center;
-      margin-top: 18px;
-      font-size: 14px;
-      color: #667085;
+      padding: 110px 8%;
     }
 
-    @media (max-width: 600px) {
+    .hero h1 {
+      font-size: 48px;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 22px auto;
+      color: #d1d5db;
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      background: #22c55e;
+      color: #052e16;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #4ade80;
+    }
+
+    .section {
+      padding: 80px 8%;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .section-text {
+      max-width: 650px;
+      margin: 0 auto 40px;
+      color: #6b7280;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #ffffff;
+      width: 300px;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+    }
+
+    .card-icon {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    .health {
+      background: #ffffff;
+    }
+
+    .health-box {
+      max-width: 850px;
+      margin: auto;
+      background: #f0fdf4;
+      padding: 35px;
+      border-radius: 14px;
+    }
+
+    .health-box h3 {
+      margin-bottom: 12px;
+      color: #166534;
+    }
+
+    .health-box p {
+      color: #4b5563;
+    }
+
+    .cta {
+      background: #16a34a;
+      color: white;
+    }
+
+    .cta h2 {
+      color: white;
+    }
+
+    .cta p {
+      max-width: 600px;
+      margin: 15px auto;
+      color: #dcfce7;
+    }
+
+    .cta .btn {
+      background: white;
+      color: #166534;
+    }
+
+    footer {
+      background: #111827;
+      color: #9ca3af;
+      text-align: center;
+      padding: 28px 8%;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .hero {
+        padding: 80px 6%;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .section {
+        padding: 60px 6%;
+      }
+
       .card {
-        width: calc(100% - 32px);
-        padding: 30px 24px;
+        width: 100%;
+        max-width: 360px;
       }
     }
   </style>
@@ -157,81 +217,122 @@
 
 <body>
 
-  <div class="card">
+  <header>
+    <div class="logo">Fit<span>Life</span></div>
 
-    <div class="preview-text">
-      Here's a preview of your destination
-    </div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#health">Health</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <a href="#" class="destination">
-      Your Website
-    </a>
 
-    <p class="description">
-      We couldn't retrieve information about this page, but we're
-      reviewing the link for your safety.
+  <section class="hero">
+    <h1>Stay Active. Feel Better. Build Healthy Habits.</h1>
+
+    <p>
+      Explore a simple approach to fitness, movement and everyday wellness.
+      Create a routine that supports an active and balanced lifestyle.
     </p>
 
-    <div class="security-box">
+    <a href="#services" class="btn">Explore More</a>
+  </section>
 
-      <div class="security-title">
-        Security check
+
+  <section class="section" id="services">
+
+    <h2>Fitness & Wellness</h2>
+
+    <p class="section-text">
+      Discover simple fitness and wellness activities designed to support
+      regular movement and healthy everyday routines.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-icon">🏋️</div>
+
+        <h3>Gym Training</h3>
+
+        <p>
+          Explore strength and fitness activities in a positive
+          and comfortable environment.
+        </p>
       </div>
 
-      <div class="security-item">
-        <span class="icon">
-          <span class="shield"></span>
-        </span>
-        <span>Security scan completed</span>
+
+      <div class="card">
+        <div class="card-icon">🏃</div>
+
+        <h3>Active Lifestyle</h3>
+
+        <p>
+          Add regular movement to your routine and discover enjoyable
+          ways to stay active.
+        </p>
       </div>
 
-      <div class="security-item">
-        <span class="icon">
-          <span class="eye"></span>
-        </span>
-        <span>Links monitored for suspicious behavior</span>
-      </div>
 
-      <div class="security-item">
-        <span class="icon check">✓</span>
-        <span>No threats detected at this time</span>
+      <div class="card">
+        <div class="card-icon">🥗</div>
+
+        <h3>Healthy Habits</h3>
+
+        <p>
+          Focus on balanced everyday habits that can support
+          general health and wellbeing.
+        </p>
       </div>
 
     </div>
 
-    <button class="continue-btn" onclick="continueToSite()">
-      Continue to destination
-      <span class="arrow">→</span>
-    </button>
+  </section>
 
-    <div class="redirect">
-      You'll be redirected in <span id="countdown">2</span> seconds...
+
+  <section class="section health" id="health">
+
+    <h2>Your Health, Your Routine</h2>
+
+    <p class="section-text">
+      Small and consistent lifestyle choices can help support
+      an active and balanced routine.
+    </p>
+
+    <div class="health-box">
+
+      <h3>Simple Wellness Approach</h3>
+
+      <p>
+        Stay active, get enough rest, eat a balanced variety of foods,
+        stay hydrated and choose activities that work well with your routine.
+      </p>
+
     </div>
 
-  </div>
+  </section>
 
-  <script>
-    let seconds = 2;
 
-    const countdown = document.getElementById("countdown");
+  <section class="section cta" id="contact">
 
-    const timer = setInterval(() => {
-      seconds--;
+    <h2>Start Your Fitness Journey</h2>
 
-      countdown.textContent = seconds;
+    <p>
+      Explore fitness and wellness activities and build a routine
+      that works for your lifestyle.
+    </p>
 
-      if (seconds <= 0) {
-        clearInterval(timer);
-        // Put your legitimate destination URL here if needed.
-        // window.location.href = "https://example.com";
-      }
-    }, 1000);
+    <a href="mailto:hello@example.com" class="btn">
+      Contact Us
+    </a>
 
-    function continueToSite() {
-      // Put your legitimate destination URL here.
-      window.location.href = "https://example.com";
-    }
-  </script>
+  </section>
+
+
+  <footer>
+    © 2026 FitLife. All Rights Reserved.
+  </footer>
 
 </body>
 </html>
